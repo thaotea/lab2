@@ -1,67 +1,109 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <h1> Settings </h1>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 5px;
+}
+button {
+  background-color: lightgray;
+  border-radius: 2px;
+  font-size: 20px;
+  padding: 10px;
+  margin: 10px;
+}
 body {
   background-color: white;
-	margin: 0;
-	font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.header {
-	overflow: hidden;
-	background-color: #E9E9E9;
+/* Popup container */
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
 }
 
-.footer {
-	overflow: hidden;
-	background-color: #E9E9E9;
+/* The actual popup (appears on top) */
+.popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
 }
 
-.header a {
-	float: left;
- 	color: #505050;
- 	padding: 30px 50px;
- 	text-decoration: none;
- 	font-size: 16px;
+/* Popup arrow */
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
 }
 
-.footer a {
-	float:left;
- 	color: #505050;
- 	padding: 30px 50px;
- 	text-decoration: none;
- 	font-size: 16px;
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
 }
-
-
-
 </style>
 </head>
 
 <body>
+  <table>
+    <tr style> <button type="button">
+      <div class="popup" onclick="myFunction()"> Change Meal Plan
+        <span class="popuptext" id="myPopup">
+          <input type="checkbox"> Ketogenic <br>
+          <input type="checkbox"> Vegan <br>
+          <input type="checkbox" checked> Vegetarian <br>
+          <input type="checkbox"> Pescatarian <br>
+          <input type="checkbox" checked> Raw Food <br> </span>
+      </div> </button> </tr>
+    <tr> <button type="button"> <a href="">Change Username/Password</a></button> </tr>
+    <tr> <button type="button">
+      <div class="popup" onclick="myFunction2()"> Push Notifications
+        <span class="popuptext" id="myPopup2"> Notify me if my food expires within: <br>
+          <input type="checkbox"> Never <br>
+          <input type="checkbox"> 1 hour <br>
+          <input type="checkbox"> 1 day <br>
+          <input type="checkbox" checked> 3 days <br>
+          <input type="checkbox" checked> 1 week <br> </span>
+      </div> </button> </tr>
+    <tr> <button type="button"> Logout </button> </tr>
 
-	<div class="header" id="header">
-		<a href="index.html"><h3> MUNCH </h3></a>
+  </table>
 
-	</div>
+  <script>
 
-  <a href="profile.html"><h3> BACK TO PROFILE </h3></a>
+    function myFunction() {
+      var popup = document.getElementById("myPopup");
+      popup.classList.toggle("show");
+    }
 
+    function myFunction2() {
+      var popup2 = document.getElementById("myPopup2");
+      popup2.classList.toggle("show");
+    }
 
-	<h1> SETTINGS </h1>
-
-
-
-
-
-  	<div class="footer" id="footer">
-  		<a href="index.html"><h3> HOME </h3></a>
-  		<a href="favorites.html"><h3> FAVORITES </h3></a>
-  		<a href="profile.html"><h3> PROFILE </h3></a>
-  	</div>
-
-
+  </script>
 
 </body>
 </html>
