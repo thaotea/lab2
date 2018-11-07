@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
-<style>
-body {
-  background-color: white;
-	margin: 0;
-	font-family: Arial, Helvetica, sans-serif;
-}
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre" rel="stylesheet">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link href="search-filter.css" rel="stylesheet">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
 .header {
 	overflow: hidden;
 	background-color: #E9E9E9;
 }
-
 .footer {
 	overflow: hidden;
 	background-color: #E9E9E9;
 }
-
 .header a {
 	float: left;
  	color: #505050;
@@ -25,7 +30,6 @@ body {
  	text-decoration: none;
  	font-size: 16px;
 }
-
 .footer a {
 	float:left;
  	color: #505050;
@@ -33,55 +37,189 @@ body {
  	text-decoration: none;
  	font-size: 16px;
 }
+body {
+  background-color: white;
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+/* Popup container */
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
 
+/* The actual popup (appears on top) */
+.popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
 table {
   border: 1px solid black;
   border-collapse: collapse;
-  padding: 100px;
   background-color: white;
+}
+
+td {
+
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    border:1px solid;
+}
+
+div.centered{
+  width: 100px;
+  height: 50px;
+  position:fixed;
+  top: calc(50% - 25px); // half of width
+  left: calc(50% - 50px); // half of height
 }
 
 </style>
 </head>
 
 <body>
-
-	<div class="header" id="header">
+  <div class="header" id="header">
 		<a href="index.html"><h3> MUNCH </h3></a>
 	  <a href="index.html"><h3> JUST FOR YOU </h3></a>
 		<a href="ingredients.html"><h3> INGREDIENTS </h3></a>
 	</div>
 
-<button type="button">ADD INGREDIENTS!</button>
 
   <table class=buttons>
     <tr>
-      <td> <button type="button" style="width:100%"> <img src="images/apple.jpg" width="200" height="200"> </button> </td>
-      <td> <button type="button" style="width:100%"> <img src="images/stringbeans.jpg" width="200" height="200"> </button> </td>
-      <td> <button type="button" style="width:100%"> <img src="images/cabbage.png" width="200" height="200"> </button> </td>
+      <td align="center"> <button type="button">
+        <div class="popup" onclick="myFunctionA()"> <img src="images/add.jpeg" width="40" height="40">
+            <span class="popuptext" id="myPopupA">
+              <form action="/action_page.php"> Search <br>
+                <input type="text" value="" style="border-color:lightgray"><br><br>
+               </form></span>
+        </div> </button> </td>
+      <td> <button type="button"> <img src="images/stringbeans.jpg" width="85">
+        <div class="popup" onclick="myFunction()"> <img src="images/expiration.jpg" width="25" height="25">
+            <span class="popuptext" id="myPopup">11/10/2018 </span>
+        </div> </button> </td>
+      <td> <button type="button"> <img src="images/cabbage.png" width="85">
+        <div class="popup" onclick="myFunction2()"> <img src="images/expiration.jpg" width="25" height="25">
+            <span class="popuptext" id="myPopup2">11/08/2018 </span>
+        </div> </button> </td>
     </tr>
     <tr>
-      <td> <button type="button" style="width:100%"> <img src="images/eggs.png" width="200" height="200"> </button> </td>
-      <td> <button type="button" style="width:100%"> <img src="images/garlic.jpg" width="200" height="200"> </button> </td>
-      <td> <button type="button" style="width:100%"> <img src="images/lemon.jpg" width="200" height="200"> </button> </td>
+      <td> <button type="button"> <img src="images/eggs.png" width="85">
+        <div class="popup" onclick="myFunction3()"> <img src="images/expiration.jpg" width="25" height="25">
+            <span class="popuptext" id="myPopup3">11/17/2018 </span>
+        </div> </button> </td>
+      <td> <button type="button"> <img src="images/garlic.jpg" width="85">
+        <div class="popup" onclick="myFunction4()"> <img src="images/expiration.jpg" width="25" height="25">
+            <span class="popuptext" id="myPopup4">11/25/2018 </span>
+        </div> </button> </td>
+      <td> <button type="button"> <img src="images/lemon.jpeg" width="85">
+        <div class="popup" onclick="myFunction5()"> <img src="images/expiration.jpg" width="25" height="25">
+            <span class="popuptext" id="myPopup5">11/13/2018 </span>
+        </div> </button> </td>
     </tr>
     <tr>
-      <td> <button type="button" style="width:100%"> <img src="images/shrimp.jpg" width="200" height="200"> </button> </td>
-      <td> <button type="button" style="width:100%"> <img src="images/steak.jpg" width="200" height="200"> </button> </td>
-      <td> <button type="button" style="width:100%"> <img src="images/tomatoes.jpg" width="200" height="200"> </button> </td>
+      <td> <button type="button"> <img src="images/pasta.png" width="85">
+        <div class="popup" onclick="myFunction6()"> <img src="images/expiration.jpg" width="25" height="25">
+            <span class="popuptext" id="myPopup6">03/21/2019 </span>
+        </div> </button> </td>
+      <td> <button type="button"> <img src="images/steak.png" width="85">
+        <div class="popup" onclick="myFunction7()"> <img src="images/expiration.jpg" width="25" height="25">
+            <span class="popuptext" id="myPopup7">11/07/2018 </span>
+        </div> </button> </td>
+      <td> <button type="button"> <img src="images/tomatoes.jpg" width="85">
+        <div class="popup" onclick="myFunction8()"> <img src="images/expiration.jpg" width="25" height="25">
+            <span class="popuptext" id="myPopup8">11/10/2018 </span>
+        </div> </button> </td>
     </tr>
   </table>
 
+    <script>
+    // When the user clicks on <div>, open the popup
+    function myFunctionA() {
+    var popupA = document.getElementById("myPopupA");
+    popupA.classList.toggle("show");
+   }
+    function myFunction() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+   }
+   function myFunction2() {
+     var popup2 = document.getElementById("myPopup2");
+     popup2.classList.toggle("show");
+   }
+   function myFunction3() {
+     var popup3 = document.getElementById("myPopup3");
+     popup3.classList.toggle("show");
+   }
+   function myFunction4() {
+     var popup4 = document.getElementById("myPopup4");
+     popup4.classList.toggle("show");
+   }
+   function myFunction5() {
+     var popup5 = document.getElementById("myPopup5");
+     popup5.classList.toggle("show");
+   }
+   function myFunction6() {
+     var popup6 = document.getElementById("myPopup6");
+     popup6.classList.toggle("show");
+   }
+   function myFunction7() {
+     var popup7 = document.getElementById("myPopup7");
+     popup7.classList.toggle("show");
+   }
+   function myFunction8() {
+     var popup8 = document.getElementById("myPopup8");
+     popup8.classList.toggle("show");
+   }
 
 
-  	<div class="footer" id="footer">
-  		<a href="index.html"><h3> HOME </h3></a> 
-  		<a href="favorites.html"><h3> FAVORITES </h3></a>
-  		<a href="profile.html"><h3> PROFILE </h3></a>
-  	</div>
-
-
-
+</script>
+<div class="footer" id="footer">
+  <a href="index.html"><h3> HOME </h3></a>
+  <a href="favorites.html"><h3> FAVORITES </h3></a>
+  <a href="profile.html"><h3> PROFILE </h3></a>
+</div>
 
 </body>
 </html>
