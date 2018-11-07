@@ -24,11 +24,13 @@
 	background-color: #E9E9E9;
 }
 .header a {
-	float: left;
- 	color: #505050;
- 	padding: 30px 50px;
- 	text-decoration: none;
- 	font-size: 16px;
+  float: left;
+  color: #505050;
+  padding: 12px;
+  line-height: 25px;
+  font-size: 50px;
+  text-decoration: none;
+  font-family: 'Frank Ruhl Libre', serif;
 }
 .footer a {
 	float:left;
@@ -37,6 +39,7 @@
  	text-decoration: none;
  	font-size: 16px;
 }
+
 body {
   background-color: white;
 	margin: 0;
@@ -47,6 +50,7 @@ body {
     position: relative;
     display: inline-block;
     cursor: pointer;
+
 }
 
 /* The actual popup (appears on top) */
@@ -63,6 +67,7 @@ body {
     bottom: 125%;
     left: 50%;
     margin-left: -80px;
+    margin:0px auto; width: width-of-popup;
 }
 
 /* Popup arrow */
@@ -119,12 +124,9 @@ div.centered{
 </head>
 
 <body>
-  <div class="header" id="header">
-		<a href="index.html"><h3> MUNCH </h3></a>
-	  <a href="index.html"><h3> JUST FOR YOU </h3></a>
-		<a href="ingredients.html"><h3> INGREDIENTS </h3></a>
-	</div>
-
+  <div class="header">
+    <a href="index.html">munch</a>
+  </div>
 
   <table class=buttons>
     <tr>
@@ -215,10 +217,11 @@ div.centered{
 
 
 </script>
-<div class="footer" id="footer">
-  <a href="index.html"><h3> HOME </h3></a>
-  <a href="favorites.html"><h3> FAVORITES </h3></a>
-  <a href="profile.html"><h3> PROFILE </h3></a>
+<div class="footer">
+  <p><a href="index.html" class="w3-btn w3-xlarge">&nbsp;&nbsp;&nbsp;<i class="fa fa-home">&nbsp;&nbsp;&nbsp;</i></a>
+  <a href="ingredients.html" class="w3-btn w3-xlarge">&nbsp;&nbsp;&nbsp;<i class="fa fa-plus">&nbsp;&nbsp;&nbsp;</i></a>
+  <a href="favorites.html" class="w3-btn w3-xlarge">&nbsp;&nbsp;&nbsp;<i class="fa fa-heart">&nbsp;&nbsp;&nbsp;</i></a>
+  <a href="profile.html" class="w3-btn w3-xlarge">&nbsp;&nbsp;&nbsp;<i class="fa fa-user-circle-o">&nbsp;&nbsp;&nbsp;</i></a></p>
 </div>
 
 </body>
