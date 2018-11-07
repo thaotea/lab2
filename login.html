@@ -22,8 +22,14 @@
   </div>
 
   <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="passwordchange.html">password?</a></span>
+    <button type="button" class="cancelbtn" onclick="goBack()">Cancel</button>
+      <script>
+        function goBack() {
+          window.history.back();
+        }
+      </script>
+    <span class="psw"><a href="passwordchange.html">Forgot password?</a></span>
+    <!--span class="psw">Forgot <a href="passwordchange.html">password?</a></span-->
   </div>
 </form>
 <style>
@@ -104,6 +110,7 @@ span.psw {
 .center {
     text-align: center;
   }
+
 </style>
 
 </html>
