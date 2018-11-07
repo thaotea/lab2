@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="css/bootstrap.min.css" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre" rel="stylesheet">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre" rel="stylesheet">
 <link href="search-filter.css" rel="stylesheet">
+<link href="heart.css" rel="stylesheet">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 
 <style>
-
 body {
   border: 0;
   padding: 0;
@@ -31,16 +29,15 @@ body {
   background-color: #E9E9E9;
   padding: 20px 10px;
   padding-bottom: 48px;
-
 }
 
 .footer {
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   background-color: #E9E9E9;
-   color: #505050;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #E9E9E9;
+  color: #505050;
 }
 
 
@@ -61,64 +58,48 @@ body {
 
 @media screen and (max-width: 500px) {
   .header a {
-    float: none;
-    display: block;
+  float: none;
+  display: block;
   }
 
   .container {
-      position: absolute;
-      top: 85px;
-      right: 0;
-      max-width: 100%;
-  }
-
-  img {
-      max-width: 100%;
-      max-height: 100%;
-  }
-
-  div.scroll {
-    background-color: lightblue;
+    position: absolute;
+    top: 85px;
+    right: 0;
     max-width: 100%;
-    height: 612px;
-    overflow: scroll;
-}
+  }
 
-.button {
-    position:absolute;
-    right:0px;
-    background-color: Transparent;
-    border: none;
-    color: white;
-    padding: 10px 10px;
-    padding-top:150px;
-    text-align: center;
-    font-size: 16px;
-}
-
-.button:focus{
-  color:red;
 }
 
 
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+div.scroll {
+  background-color: lightblue;
+  max-width: 100%;
+  height: 612px;
+  overflow: scroll;
 }
 
 </style>
 </head>
 <body>
 
-<div class="header">
-  <a href="index.html">munch</a>
+  <div class="header">
+    <a href="index.html">munch</a>
   </div>
+
   <div class="container">
     <div class="row searchFilter" >
-       <div class="col-sm-20" >
+      <div class="col-sm-20" >
         <div class="input-group" >
-         <input id="table_filter" type="text" placeholder="Search for recipes on Munch" class="form-control" aria-label="Text input with segmented button dropdown" >
-         <div class="input-group-btn">
+          <input id="table_filter" type="text" placeholder="Search for recipes on Munch" class="form-control" aria-label="Text input with segmented button dropdown" >
+          <div class="input-group-btn">
           <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" > <span class="caret" >&nbsp;</span></button>
           <div class="dropdown-menu dropdown-menu-right" >
-
              <ul class="category_filters" >
                <p style = "font-size:16px">Filters</p>
                <hr>
@@ -135,7 +116,6 @@ body {
                  <label class="form-check-label" for="inlineCheckbox1">Dinner</label>
                </div>
              </ul>
-
           </div>
           <button id="searchBtn" type="button" <i class="btn btn-secondary" ><span class="glyphicon glyphicon-search" >&nbsp;</span></button>
          </div>
@@ -144,38 +124,42 @@ body {
     </div>
   </div>
 
-  <div class="favorite">
-
-
-
-  </div>
 
 <div class="scroll">
 
-  <button class="button">❤</button>
+  <label for="heart1" class="custom-checkbox">
+    <input type="checkbox" id="heart1"/>
+    <i class="glyphicon glyphicon-heart-empty"></i>
+    <i class="glyphicon glyphicon-heart"></i>
+  </label>
 
   <a href="pasta.html">
     <img src="images/pasta.PNG" alt="pasta" style="border:0;">
   </a>
 
-  <button class="button">❤</button>
+  <label for="heart2" class="custom-checkbox">
+    <input type="checkbox" id="heart2"/>
+    <i class="glyphicon glyphicon-heart-empty"></i>
+    <i class="glyphicon glyphicon-heart"></i>
+  </label>
 
   <a href="potato.html">
     <img src="images/potato.PNG" alt="pasta" style="border:0;">
   </a>
 
-  <button class="button">❤</button>
-
+  <label for="heart3" class="custom-checkbox">
+    <input type="checkbox" id="heart3"/>
+    <i class="glyphicon glyphicon-heart-empty"></i>
+    <i class="glyphicon glyphicon-heart"></i>
+  </label>
 
   <a href="shrimp.html">
     <img src="images/shrimp.PNG" alt="pasta" style="border:0;">
   </a>
 
-
 </div>
 
 <div class="footer">
-  <p></p>
   <p><a href="index.html" class="w3-btn w3-xlarge">&nbsp;&nbsp;&nbsp;<i class="fa fa-home">&nbsp;&nbsp;&nbsp;</i></a>
   <a href="ingredients.html" class="w3-btn w3-xlarge">&nbsp;&nbsp;&nbsp;<i class="fa fa-plus">&nbsp;&nbsp;&nbsp;</i></a>
   <a href="favorites.html" class="w3-btn w3-xlarge">&nbsp;&nbsp;&nbsp;<i class="fa fa-heart">&nbsp;&nbsp;&nbsp;</i></a>
