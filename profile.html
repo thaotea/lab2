@@ -109,37 +109,63 @@ div.edit{
       margin-left: auto;
       margin-right: auto;
   }
+table{
+  border-collapse: collapse;border-spacing: 0;
+  height: 120px;
 
-
+}
+th{
+    text-align: center;
+    background: #efefef;
+    font-weight: bold;
+}
 </style>
 </head>
 <body>
 
 <div class="header">
-  <a href="index.html">munch</a>
+  <a href="homepage.html">munch</a>
   </div>
 
 <div class="footer">
   <p></p>
-  <p><a href="index.html" class="w3-btn w3-xlarge">&nbsp;&nbsp;&nbsp;<i class="fa fa-home">&nbsp;&nbsp;&nbsp;</i></a>
+  <p><a href="homepage.html" class="w3-btn w3-xlarge">&nbsp;&nbsp;&nbsp;<i class="fa fa-home">&nbsp;&nbsp;&nbsp;</i></a>
   <a href="ingredients.html" class="w3-btn w3-xlarge">&nbsp;&nbsp;&nbsp;<i class="fa fa-plus">&nbsp;&nbsp;&nbsp;</i></a>
   <a href="favorites.html" class="w3-btn w3-xlarge">&nbsp;&nbsp;&nbsp;<i class="fa fa-heart">&nbsp;&nbsp;&nbsp;</i></a>
   <a href="profile.html" class="w3-btn w3-xlarge">&nbsp;&nbsp;&nbsp;<i class="fa fa-user-circle-o">&nbsp;&nbsp;&nbsp;</i></a></p>
 </div>
 
+<button onclick="goBack()">Go Back</button>
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+
+
 <a href="settings.html" class="fixed2"><h3> SETTINGS </h3></a>
 <a href="help.html" class="fixed1"><h3> HELP </h3></a>
 <div style="background-color: #97bec9">
 <b><h1 class="center"> PROFILE </h1></b>
-<div class="edit"><button type="button" class="btn btn-default btn-sm">
+<!--div class="edit"><button type="button" class="btn btn-default btn-sm">
     <span class="glyphicon glyphicon-edit"></span> Edit
-</button></div>
+</button></div-->
 <img src="https://www.thehindu.com/sci-tech/technology/internet/article17759222.ece/alternates/FREE_660/02th-egg-person" alt="Avatar" class="avatar"/>
 <div class="norm"><h2 class="center">Jane Doe</h2>
 <h4 class="center">janedoe@ucsd.edu</h4></div></div>
 <h4 class="center">Member since 2018.</h4>
-<h5 class="center">Dietary Restrictions: peanuts</h5>
-
+<!--h5 class="center">Dietary Restrictions: Peanuts</h5>
+<h5 class="center">Current Diet: Zone Diet</h5-->
+<table style="width:80%" align=Center>
+  <tr>
+    <th>Dietary Restrictions</th>
+    <th>Current Diet</th>
+  </tr>
+  <tr>
+    <th>Peanuts</th>
+    <th>Zone Diet</th>
+  </tr>
+</table>
 
 
 
