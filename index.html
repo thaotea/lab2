@@ -1,105 +1,186 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre" rel="stylesheet">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link href="search-filter.css" rel="stylesheet">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <style>
+
 body {
-
-  background-color: white;
-	margin: 0;
-	font-family: Arial, Helvetica, sans-serif;
-
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font-family:'Roboto', sans-serif;
 }
 
 .header {
-	overflow: hidden;
-	background-color: #E9E9E9;
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: #E9E9E9;
+  padding: 20px 10px;
+  padding-bottom: 48px;
+
 }
 
 .footer {
-	overflow: hidden;
-	background-color: #E9E9E9;
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #E9E9E9;
+   color: #505050;
 }
+
 
 .header a {
-	float: left;
- 	color: #505050;
- 	padding: 30px 50px;
- 	text-decoration: none;
- 	font-size: 16px;
+  float: left;
+  color: #505050;
+  padding: 12px;
+  line-height: 25px;
+  font-size: 50px;
+  text-decoration: none;
+  font-family: 'Frank Ruhl Libre', serif;
 }
 
-.footer a {
-	float:left;
- 	color: #505050;
- 	padding: 30px 50px;
- 	text-decoration: none;
- 	font-size: 16px;
+.header a:hover {
+  background-color: #ddd;
+  color: black;
 }
 
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-  padding: 100px;
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+  }
+
+  .container {
+      position: absolute;
+      top: 85px;
+      right: 0;
+      max-width: 100%;
+  }
+
+  img {
+      max-width: 100%;
+      max-height: 100%;
+  }
+
+  div.scroll {
+    background-color: lightblue;
+    max-width: 100%;
+    height: 612px;
+    overflow: scroll;
 }
-button {
-  height: 100%;
-  width: 100%;
-  background-color: powderblue;
-  border-radius: 2px;
-  font-size: 40px;
+
+.button {
+    position:absolute;
+    right:0px;
+    background-color: Transparent;
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    padding-top:150px;
+    text-align: center;
+    font-size: 16px;
 }
-/* Centered text */
-.centered {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+
+.button:focus{
+  color:red;
 }
+
+
+}
+
 </style>
 </head>
-
 <body>
 
-	<div class="header" id="header">
-		<a href="index.html"><h3> MUNCHIES </h3></a>
-	  <a href="index.html"><h3> JUST FOR YOU </h3></a>
-		<a href="ingredients.html"><h3> INGREDIENTS </h3></a>
+<div class="header">
+  <a href="index.html">munch</a>
+  </div>
+  <div class="container">
+    <div class="row searchFilter" >
+       <div class="col-sm-20" >
+        <div class="input-group" >
+         <input id="table_filter" type="text" placeholder="Search for recipes on Munch" class="form-control" aria-label="Text input with segmented button dropdown" >
+         <div class="input-group-btn">
+          <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" > <span class="caret" >&nbsp;</span></button>
+          <div class="dropdown-menu dropdown-menu-right" >
 
-	</div>
+             <ul class="category_filters" >
+               <p style = "font-size:16px">Filters</p>
+               <hr>
+               <div class="form-check form-check-inline">
+                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                 <label class="form-check-label" for="inlineCheckbox1">Breakfast</label>
+               </div>
+               <div class="form-check form-check-inline">
+                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                 <label class="form-check-label" for="inlineCheckbox1">Lunch</label>
+               </div>
+               <div class="form-check form-check-inline">
+                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                 <label class="form-check-label" for="inlineCheckbox1">Dinner</label>
+               </div>
+             </ul>
 
-	<div class="topnav">
-  <input type="text" placeholder="Search for recipes on Munch..">
-	
+          </div>
+          <button id="searchBtn" type="button" <i class="btn btn-secondary" ><span class="glyphicon glyphicon-search" >&nbsp;</span></button>
+         </div>
+        </div>
+       </div>
+    </div>
+  </div>
+
+  <div class="favorite">
+
+
+
+  </div>
+
+<div class="scroll">
+
+  <button class="button">❤</button>
+
+  <a href="pasta.html">
+    <img src="images/pasta.PNG" alt="pasta" style="border:0;">
+  </a>
+
+  <button class="button">❤</button>
+
+  <a href="potato.html">
+    <img src="images/potato.PNG" alt="pasta" style="border:0;">
+  </a>
+
+  <button class="button">❤</button>
+
+
+  <a href="shrimp.html">
+    <img src="images/shrimp.PNG" alt="pasta" style="border:0;">
+  </a>
+
+
 </div>
 
-	<div>
-    <button type="button"><input id type="image" src="https://assets.bonappetit.com/photos/5b9a901947aaaf7cd9ea90f4/master/w_1200,c_limit/ba-recipe-pasta-al-limone-1.jpg" alt="Pasta al Limone" style="width:100%;">
-      <div class="centered"><b>Pasta al Limone</b></div>
-      <div class="centered">20 minutes</div>
-  </div>
-    </button>
-  <div>
-    <button type="button"> <input id type="image" src="https://img1.cookinglight.timeinc.net/sites/default/files/styles/4_3_horizontal_-_1200x900/public/1504123526/silky-smooth-mashed-potatoes-1710p136.jpg?itok=TOxdLsW0" alt="Mashed Potatoes" style="width:100%;">
-      <div class="centered"><b>Mashed Potatoes</b></div>
-      <div class="centered">15 minutes</div>
-    </button>
-  </div>
-  <div>
-    <button type="button"> <input id type="image" src="https://assets.bonappetit.com/photos/5bbf692a00d71c2d1a6c420a/16:9/w_1200,c_limit/citrus-shrimp-rice-bowls.jpg" alt="Citrus Shrimp Rice Bowl" style="width:100%;">
-      <div class="centered"><b>Citrus Shrimp Rice Bowl</b></div>
-      <div class="centered">45 minutes</div>
-    </button>
-  </div>
-
-
-
-	<div class="footer" id="footer">
-		<a href="index.html"><h3> HOME </h3></a>
-		<a href="favorites.html"><h3> FAVORITES </h3></a>
-		<a href="profile.html"><h3> PROFILE </h3></a>
-	</div>
-
-
+<div class="footer">
+  <p></p>
+  <p><a href="index.html" class="w3-btn w3-xlarge">&nbsp;&nbsp;&nbsp;<i class="fa fa-home">&nbsp;&nbsp;&nbsp;</i></a>
+  <a href="ingredients.html" class="w3-btn w3-xlarge">&nbsp;&nbsp;&nbsp;<i class="fa fa-plus">&nbsp;&nbsp;&nbsp;</i></a>
+  <a href="favorites.html" class="w3-btn w3-xlarge">&nbsp;&nbsp;&nbsp;<i class="fa fa-heart">&nbsp;&nbsp;&nbsp;</i></a>
+  <a href="profile.html" class="w3-btn w3-xlarge">&nbsp;&nbsp;&nbsp;<i class="fa fa-user-circle-o">&nbsp;&nbsp;&nbsp;</i></a></p>
+</div>
 
 
 </body>
