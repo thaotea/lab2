@@ -84,21 +84,6 @@ body {
     overflow: scroll;
 }
 
-.button {
-    position:absolute;
-    right:0px;
-    background-color: Transparent;
-    border: none;
-    color: white;
-    padding: 10px 10px;
-    padding-top:150px;
-    text-align: center;
-    font-size: 16px;
-}
-
-.button:focus{
-  color:red;
-}
 
 
 }
@@ -112,17 +97,45 @@ body {
   </div>
 
 
-<div class="scroll">
 
 
+  <div class="scroll">
 
-  <a href="pasta.html">
-    <img src="images/pasta.PNG" alt="pasta" style="border:0;">
-  </a>
-
-
-
-
+  <div id="accordion">
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h5 class="mb-0">
+          <button style="color:#5484AE;text-decoration:none;font-size:25px;"class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          All
+          </button>
+        </h5>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+        <div class="card-body">
+          <a href="pasta.html">
+            <img src="images/pasta.PNG" alt="pasta" style="border:0;">
+          </a>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h5 class="mb-0">
+          <button style="color:#5484AE;text-decoration:none;font-size:25px;"class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Dinner
+          </button>
+        </h5>
+      </div>
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+        <div class="card-body">
+          <img src="images/pasta.PNG" alt="pasta" style="border:0;">
+        </div>
+      </div>
+    </div>
+    <hr>
+  </div>
 
 </div>
 
@@ -137,4 +150,3 @@ body {
 
 </body>
 </html>
-
