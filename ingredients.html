@@ -15,13 +15,28 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
+body {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font-family:'Roboto', sans-serif;
+}
 .header {
-	overflow: hidden;
-	background-color: #E9E9E9;
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: #E9E9E9;
+  padding: 20px 10px;
+  padding-bottom: 20px;
 }
 .footer {
-	overflow: hidden;
-	background-color: #E9E9E9;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #E9E9E9;
+  color: #505050;
 }
 .header a {
   float: left;
@@ -32,19 +47,33 @@
   text-decoration: none;
   font-family: 'Frank Ruhl Libre', serif;
 }
-.footer a {
-	float:left;
- 	color: #505050;
- 	padding: 30px 50px;
- 	text-decoration: none;
- 	font-size: 16px;
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+@media screen and (max-width: 500px) {
+  .header a {
+  float: none;
+  display: block;
+  }
+  .container {
+    position: absolute;
+    top: 85px;
+    right: 0;
+    max-width: 100%;
+  }
+}
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+div.scroll {
+  background-color: white;
+  max-width: 100%;
+  height: 602px;
+  overflow: scroll;
 }
 
-body {
-  background-color: white;
-	margin: 0;
-	font-family: Arial, Helvetica, sans-serif;
-}
 /* Popup container */
 .popup {
     position: relative;
@@ -55,7 +84,7 @@ body {
 
 /* The actual popup (appears on top) */
 .popup .popuptext {
-    visibility: hidden;
+  visibility: hidden;
     width: 160px;
     background-color: #555;
     color: #fff;
@@ -67,6 +96,7 @@ body {
     bottom: 125%;
     left: 50%;
     margin-left: -80px;
+    /* margin:0px auto; width: width-of-popup; */
 }
 
 /* Popup arrow */
@@ -130,7 +160,7 @@ div.centered{
   <table class=buttons>
     <tr>
       <td align="center"> <button type="button">
-        <div class="popup" onclick="myFunctionA()"> <img src="images/add.jpeg" width="40" height="40">
+        <div class="popup" onclick="myFunctionA()" style="margin:0px auto"> <img src="images/add.jpeg" width="40" height="40">
             <span class="popuptext" id="myPopupA">
               <form action="/action_page.php"> Search <br>
                 <input type="text" value="" style="border-color:lightgray"><br><br>
