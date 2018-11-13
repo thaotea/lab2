@@ -60,6 +60,9 @@
 button {
   border: 1px solid black;
 }
+input[type=button] {
+  border: 1px solid black;
+}
 </style>
 </head>
 
@@ -72,17 +75,28 @@ button {
   New Username:<br>
   <input type="text" value="" style="border-color:lightgray"><br><br>
   <button type="button"> <a href="usernamechange.html">Enter</a></button> <br><br>
-  Current Password:<br>
-  <input type="password" value="" style="border-color:lightgray"><br>
-  New Password:<br>
-  <input type="password" value="" style="border-color:lightgray"><br><br>
-  <button type="button"> <a href="passwordchange.html">Enter</a></button>
-  <button type="button"> <a href="settings.html">Return to Settings</a></button>
 </form>
+  <form name="login">
+  Current Password<br><input type="password" name="currpass" style="border-color:lightgray"/><br>
+  New Password<br><input type="password" name="newpass" style="border-color:lightgray"/><br><br>
+  <input type="button" onclick="check(this.form)" value="Enter"/>
+  <button type="button"> <a href="settings.html">Return to Settings</a></button>
+  </form>
+  <script language="javascript">
+  function check(form)/*function to check userid & password*/
+  {
+   /*the following code checkes whether the entered userid and password are matching*/
+   if(form.currpass.value == "hung123" && form.newpass.value != "hung123")
+    {
+      window.open('passwordchange.html')/*opens the target page while Id & password matches*/
+    }
+   else
+   {
+     alert("Error: Password is same as current password")/*displays error message*/
+    }
+  }
+  </script>
 
-<script>
-
-</script>
 <div class="footer">
   <p><a href="index.html" class="w3-btn w3-xlarge">&nbsp;&nbsp;&nbsp;<i class="fa fa-home">&nbsp;&nbsp;&nbsp;</i></a>
   <a href="ingredients.html" class="w3-btn w3-xlarge">&nbsp;&nbsp;&nbsp;<i class="fa fa-plus">&nbsp;&nbsp;&nbsp;</i></a>
