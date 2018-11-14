@@ -7,10 +7,8 @@
   <link href="https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre" rel="stylesheet">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
   <link href="search-filter.css" rel="stylesheet">
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link href="heart.css" rel="stylesheet">
@@ -18,6 +16,7 @@
 
 
 <style>
+
 body {
   border: 0;
   padding: 0;
@@ -32,7 +31,7 @@ body {
   width: 100%;
   background-color: #E9E9E9;
   padding: 20px 10px;
-  padding-bottom: 48px;
+  padding-bottom: 20px;
 }
 
 .footer {
@@ -66,12 +65,6 @@ body {
   display: block;
   }
 }
-  .container {
-    position: absolute;
-    top: 85px;
-    right: 0;
-    max-width: 100%;
-  }
 
 
 img {
@@ -82,107 +75,115 @@ img {
 div.scroll {
   background-color: white;
   max-width: 100%;
-  height: 602px;
+  max-height: 100%;
   overflow: scroll;
 }
+
+.search {
+  position: absolute;
+  right: 10px;
+  top: 22px;
+}
+
+.filterDiv {
+  width: 100%;
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+
+
+/* Style the buttons */
+.btn {
+  float: left;
+  border: 1px solid lightgray;
+  border-radius:0px;
+  width:50%;
+  outline: none;
+  padding: 12px 16px;
+  background-color: white;
+}
+
+.btn.active {
+  background-color: #5484AE;
+  color: white;
+}
+
+.dropbtn {
+    width:375px;
+    background-color: #606060;
+    color: white;
+    padding: 5px;
+    font-size: 13px;
+    border: none;
+    text-align: right;
+}
+
+.dropbtn:focus {
+    background-color: #464646;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
 
 </style>
 </head>
 <body>
 
-  <div class="header">
-    <a href="index.html">munch</a>
-  </div>
+<div class="header">
+  <a href="index.html">munch</a>
+</div>
 
-  <div class="container">
-    <div class="row searchFilter" >
-      <div class="col-sm-20" >
-        <div class="input-group" >
-          <input id="table_filter" type="text" placeholder="Search for recipes on Munch" class="form-control" aria-label="Text input with segmented button dropdown" >
-          <div class="input-group-btn">
-          <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" > <span class="caret" >&nbsp;</span></button>
-          <div class="dropdown-menu dropdown-menu-right" >
-             <ul class="category_filters" >
-               <p style = "font-size:16px">Use your ingredients?</p>
-              <hr>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                <label class="form-check-label" for="inlineCheckbox1">Yes</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option1">
-                <label class="form-check-label" for="inlineCheckbox2">No </label>
-              </div>
-              <br>
-               <p style = "font-size:16px">Sort By</p>
-              <hr>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option1">
-                <label class="form-check-label" for="inlineCheckbox3">Calories&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option1">
-                <label class="form-check-label" for="inlineCheckbox4">Cook time </label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option1">
-                <label class="form-check-label" for="inlineCheckbox5">Popular</label>
-              </div>
-              <br>
-               <p style = "font-size:16px">Meal Type</p>
-               <hr>
-               <div class="form-check form-check-inline">
-                 <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option1">
-                 <label class="form-check-label" for="inlineCheckbox6">Breakfast&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-               </div>
-               <div class="form-check form-check-inline">
-                 <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option1">
-                 <label class="form-check-label" for="inlineCheckbox7">Lunch</label>
-               </div>
-               <div class="form-check form-check-inline">
-                 <input class="form-check-input" type="checkbox" id="inlineCheckbox8" value="option1">
-                 <label class="form-check-label" for="inlineCheckbox8">Dinner</label>
-               </div>
-               <div class="form-check form-check-inline">
-                 <input class="form-check-input" type="checkbox" id="inlineCheckbox9" value="option1">
-                 <label class="form-check-label" for="inlineCheckbox9">Appetizer</label>
-               </div>
-               <br>
-               <p style = "font-size:16px">Diet & Health</p>
-               <hr>
-
-               <div class="form-check form-check-inline">
-                 <input class="form-check-input" type="checkbox" id="inlineCheckbox10" value="option1">
-                 <label class="form-check-label" for="inlineCheckbox10">Diabetic</label>
-               </div>
-               <div class="form-check form-check-inline">
-                 <input class="form-check-input" type="checkbox" id="inlineCheckbox11" value="option1">
-                 <label class="form-check-label" for="inlineCheckbox11">Gluten Free</label>
-               </div>
-               <div class="form-check form-check-inline">
-                 <input class="form-check-input" type="checkbox" id="inlineCheckbox12" value="option1">
-                 <label class="form-check-label" for="inlineCheckbox12">Healthy</label>
-               </div>
-               <div class="form-check form-check-inline">
-                 <input class="form-check-input" type="checkbox" id="inlineCheckbox13" value="option1">
-                 <label class="form-check-label" for="inlineCheckbox13">Vegetarian</label>
-               </div>
-               <div class="form-check form-check-inline">
-                 <input class="form-check-input" type="checkbox" id="inlineCheckbox14" value="option1">
-                 <label class="form-check-label" for="inlineCheckbox14">Vegan</label>
-               </div>
-             </ul>
-          </div>
-          <button id="searchBtn" type="button" <i class="btn btn-secondary" ><span class="glyphicon glyphicon-search" >&nbsp;</span></button>
-         </div>
-        </div>
-       </div>
-    </div>
-  </div>
-
+<div class="search">
+  <a href="search.html" class="w3-btn w3-xlarge">&nbsp;&nbsp;&nbsp;<i class="fa fa-search"></i></a>
+</div>
 
 <div class="scroll">
 
+    <div class="dropdown">
+      <button onclick="myFunction();" class="dropbtn">  <div id="Filters">Filters ⮟</div> </button>
+
+      <div id="myDropdown" class="dropdown-content">
+        <div id="myBtnContainer">
+          <button class="btn active" onclick="filterSelection('all')">Clear filters</button>
+          <button class="btn" onclick="filterSelection('all')">Use Ingredients</button>
+          <button class="btn" onclick="filterSelection('gluten')">Gluten-Free</button>
+          <button class="btn" onclick="filterSelection('healthy')">Healthy</button>
+          <button class="btn" onclick="filterSelection('lowcarb')">Low Carb</button>
+          <button class="btn" onclick="filterSelection('lowcalorie')">Low Calorie</button>
+          <button class="btn" onclick="filterSelection('vegan')">Vegan</button>
+          <button class="btn" onclick="filterSelection('vegeterian')">Vegetarian</button>
+        </div>
+      </div>
+    </div>
+
+  <div class="filterDiv vegeterian">
   <label for="heart1" class="custom-checkbox">
     <input type="checkbox" id="heart1"/>
     <i class="glyphicon glyphicon-heart-empty"></i>
@@ -192,7 +193,9 @@ div.scroll {
   <a href="pasta.html">
     <img src="images/pasta.PNG" alt="pasta" style="border:0;">
   </a>
+  </div>
 
+  <div class="filterDiv vegeterian">
   <label for="heart2" class="custom-checkbox">
     <input type="checkbox" id="heart2"/>
     <i class="glyphicon glyphicon-heart-empty"></i>
@@ -200,9 +203,11 @@ div.scroll {
   </label>
 
   <a href="potato.html">
-    <img src="images/potato.PNG" alt="pasta" style="border:0;">
+    <img src="images/potato.PNG" alt="potato" style="border:0;">
   </a>
+  </div>
 
+  <div class="filterDiv healthy lowcalorie lowcarb">
   <label for="heart3" class="custom-checkbox">
     <input type="checkbox" id="heart3"/>
     <i class="glyphicon glyphicon-heart-empty"></i>
@@ -210,10 +215,89 @@ div.scroll {
   </label>
 
   <a href="shrimp.html">
-    <img src="images/shrimp.PNG" alt="pasta" style="border:0;">
+    <img src="images/shrimp.PNG" alt="shrimp" style="border:0;">
   </a>
+  </div>
 
+  <div class="filterDiv lowcarb">
+  <label for="heart4" class="custom-checkbox">
+    <input type="checkbox" id="heart4"/>
+    <i class="glyphicon glyphicon-heart-empty"></i>
+    <i class="glyphicon glyphicon-heart"></i>
+  </label>
+
+  <a href="bbq.html">
+    <img src="images/bbq.PNG" alt="bbq" style="border:0;">
+  </a>
+  </div>
+
+
+  <div class="filterDiv healthy gluten lowcalorie">
+  <label for="heart5" class="custom-checkbox">
+    <input type="checkbox" id="heart5"/>
+    <i class="glyphicon glyphicon-heart-empty"></i>
+    <i class="glyphicon glyphicon-heart"></i>
+  </label>
+
+  <a href="chicken.html">
+    <img src="images/chicken.PNG" alt="chicken" style="border:0;">
+  </a>
+  </div>
+
+
+  <div class="filterDiv vegeterian vegan healthy lowcalorie">
+  <label for="heart6" class="custom-checkbox">
+    <input type="checkbox" id="heart6"/>
+    <i class="glyphicon glyphicon-heart-empty"></i>
+    <i class="glyphicon glyphicon-heart"></i>
+  </label>
+
+  <a href="udon.html">
+    <img src="images/udon.PNG" alt="udon" style="border:0;">
+  </a>
+  </div>
+
+  <div class="filterDiv healthy lowcarb lowcalorie gluten">
+  <label for="heart7" class="custom-checkbox">
+    <input type="checkbox" id="heart7"/>
+    <i class="glyphicon glyphicon-heart-empty"></i>
+    <i class="glyphicon glyphicon-heart"></i>
+  </label>
+
+  <a href="poke.html">
+    <img src="images/poke.PNG" alt="poke" style="border:0;">
+  </a>
+  </div>
+
+  <div class="filterDiv vegan vegeterian healthy lowcarb gluten">
+  <label for="heart8" class="custom-checkbox">
+    <input type="checkbox" id="heart8"/>
+    <i class="glyphicon glyphicon-heart-empty"></i>
+    <i class="glyphicon glyphicon-heart"></i>
+  </label>
+
+  <a href="soup.html">
+    <img src="images/soup.PNG" alt="soup" style="border:0;">
+  </a>
+  </div>
+
+  <div class="filterDiv vegan vegeterian healthy lowcarb lowcalorie">
+  <label for="heart9" class="custom-checkbox">
+    <input type="checkbox" id="heart9"/>
+    <i class="glyphicon glyphicon-heart-empty"></i>
+    <i class="glyphicon glyphicon-heart"></i>
+  </label>
+
+  <a href="salad.html">
+    <img src="images/salad.PNG" alt="salad" style="border:0;">
+  </a>
+  </div>
+<br>
+<br>
+<br>
 </div>
+
+
 
 <div class="footer">
   <p><a href="index.html" class="w3-btn w3-xlarge">&nbsp;&nbsp;&nbsp;<i class="fa fa-home">&nbsp;&nbsp;&nbsp;</i></a>
@@ -223,5 +307,82 @@ div.scroll {
 </div>
 
 
+
+  <script>
+  function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+      var x = document.getElementById("Filters");
+      if (x.innerHTML === "Filters ⮟") {
+        x.innerHTML = "Filters ⮝";
+      } else {
+        x.innerHTML = "Filters ⮟";
+    }
+  }
+
+  function myFunction2() {
+
+  }
+
+  function filterFunction() {
+      var input, filter, ul, li, a, i;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      div = document.getElementById("myDropdown");
+      a = div.getElementsByTagName("a");
+      for (i = 0; i < a.length; i++) {
+          if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+              a[i].style.display = "";
+          } else {
+              a[i].style.display = "none";
+          }
+      }
+  }
+
+  filterSelection("all")
+  function filterSelection(c) {
+    var x, i;
+    x = document.getElementsByClassName("filterDiv");
+    if (c == "all") c = "";
+    for (i = 0; i < x.length; i++) {
+      w3RemoveClass(x[i], "show");
+      if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+    }
+  }
+
+  function w3AddClass(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+      if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+    }
+  }
+
+  function w3RemoveClass(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+      while (arr1.indexOf(arr2[i]) > -1) {
+        arr1.splice(arr1.indexOf(arr2[i]), 1);
+      }
+    }
+    element.className = arr1.join(" ");
+  }
+
+  // Add active class to the current button (highlight it)
+  var btnContainer = document.getElementById("myBtnContainer");
+  var btns = btnContainer.getElementsByClassName("btn");
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function(){
+      var current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace(" active", "");
+      this.className += " active";
+    });
+  }
+  </script>
+
 </body>
 </html>
+
+
