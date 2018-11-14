@@ -86,13 +86,13 @@ input[type=button] {
   function check(form)/*function to check userid & password*/
   {
    /*the following code checkes whether the entered userid and password are matching*/
-   if(form.currpass.value == "test123" && form.newpass.value != "test123")
+    if(form.currpass.value != "test123")
+     {
+       alert("Error: Current password is incorrect.")/*opens the target page while Id & password matches*/
+     }
+    else
     {
-      window.open('passwordchange.html')/*opens the target page while Id & password matches*/
-    }
-   else
-   {
-     alert("Error: Password is same as current password")/*displays error message*/
+      window.open('passwordchange.html')
     }
   }
   </script>
