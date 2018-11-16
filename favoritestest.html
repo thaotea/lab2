@@ -117,11 +117,17 @@ img.seen {
       <script>
 
         var newFav = localStorage.getItem('makeFave');
-        if (newFav) {
-          $('#fave1').html(newFav);
+        if (newFav) == null {
+          newFave = {}
         }
-
+        /*else {
+          $('#fave1').html(newFav);
+        }*/
+        else {
+        newFave = JSON.parse(localStorage.getItem('addFave'));
+        }
       </script>
+
       </div>
     </div>
     <hr>
