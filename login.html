@@ -20,7 +20,7 @@
    </label>
    <div class="container" style="background-color:#f1f1f1">
     <button type="button" class="cancelbtn">Reset <a href="login.html"/></button>
-    <a href="forgotpass.html"> Forgot password? </a>
+    <a href="forgotpass.html" style="font-size:12px;text-decoration:none;">Forgot password? </a>
   </div>
 
 <script language="javascript">
@@ -29,7 +29,7 @@ function check(form)/*function to check userid & password*/
  /*the following code checkes whether the entered userid and password are matching*/
  if(form.userid.value == "tester" && form.pswrd.value == "test123")
   {
-    window.open('index.html')/*opens the target page while Id & password matches*/
+    window.open('index.html','_self')/*opens the target page while Id & password matches*/
   }
  else
  {
@@ -39,9 +39,13 @@ function check(form)/*function to check userid & password*/
 </script>
 </body>
 <style>
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-  }
+
+body {
+  padding:20px;
+  border: 0;
+  margin: 0;
+  font-family:'Roboto', sans-serif;
+}
 /* Bordered form */
 form {
     border: 3px solid #f1f1f1;
@@ -112,3 +116,4 @@ span.psw {
 </style>
 
 </html>
+
