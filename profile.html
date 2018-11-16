@@ -14,6 +14,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+<link href="css/introHCI.css" rel="stylesheet">
+
 <style>
 
 body {
@@ -21,6 +26,7 @@ body {
   padding: 0;
   margin: 0;
   font-family:'Roboto', sans-serif;
+  background-color:#414141;
 }
 
 .header {
@@ -30,7 +36,7 @@ body {
   width: 100%;
   background-color: #E9E9E9;
   padding: 20px 10px;
-  padding-bottom: 48px;
+  padding-bottom: 30px;
 
 }
 
@@ -64,15 +70,6 @@ body {
     float: none;
     display: block;
   }
-
-
-  div.scroll {
-    background-color: lightblue;
-    max-width: 100%;
-    height: 612px;
-    overflow: scroll;
-}
-
 
 }
 .fixed1 {
@@ -110,6 +107,65 @@ height: 120px;
   color: black;
 }
 
+#changeName {
+  border: none;
+  border-radius: 8px;
+  position:absolute;
+  right: 60px;
+  top: 45%;
+  color: #E9E9E9;
+  background-color: #414141;
+  font-size:20px;
+}
+
+#changePass {
+  border: solid 1px color: white;
+  border-radius: 8px;
+  position:absolute;
+  top: 50%;
+  left: 35%;
+  color: #E9E9E9;
+  font-size:10px;
+  background-color: #414141;
+
+}
+
+#push {
+  border: solid 1px color: white;
+  border-radius: 8px;
+  position:absolute;
+  top: 55%;
+  left: 34%;
+  color: #E9E9E9;
+  font-size:10px;
+  background-color: #414141;
+}
+
+#help {
+  border: solid 1px color: white;
+  border-radius: 8px;
+  position:absolute;
+  left:43%;
+  top: 60%;
+  color: #E9E9E9;
+  font-size:10px;
+  background-color: #414141;
+
+
+}
+
+#logout {
+  border: solid 1px color: white;
+  border-radius: 8px;
+  position:absolute;
+  left:41%;
+  top: 65%;
+  color: #E9E9E9;
+  font-size:10px;
+  background-color: #414141;
+
+
+}
 div.edit{
   position: fixed;
   right: 10px;
@@ -120,6 +176,7 @@ div.edit{
   }
   div.norm {
       line-height: normal;
+      color: white;
   }
   .avatar {
       vertical-align: middle;
@@ -140,12 +197,54 @@ th, td{
     font-weight: bold;
 }
 
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    right:-40%;
+    bottom: 125%;
+    margin-left: -80px;
+    margin:0px auto; width: width-of-popup;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+}
+
 </style>
 </head>
 <body>
 
 <div class="header">
-  <a href="homepage.html">munch</a>
+  <a href="index.html">munch</a>
   </div>
 
 <div class="footer">
@@ -157,34 +256,64 @@ th, td{
 </div>
 
 
+<script id="entry-template" type="text/x-handlebars-template">
+		<div class="project" id="project{{index}}">
+			<a href="#" class="thumbnail">
+				<img src="{{profilePic}}" alt="Lorem Pixel image" class="img">
+				<p>{{title}}</p>
+			</a>
+		</div>
+</script>
+
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/handlebars-v4.0.11.js"></script>
+<script src="js/lab4.js"></script>
 <!--a href="settings.html" class="fixed2"><h3> SETTINGS </h3></a>
 <a href="help.html" class="fixed1"><h3> HELP </h3></a-->
 
-  <button type="submit" class="helpbtn"><a href="https://thaotea.github.io/lab2/help.html">Help</a></button>
-  <button type="submit" class="settingsbtn"><a href="https://thaotea.github.io/lab2/settings.html">Settings</a></button>
 
 
-<div style="background-color: #97bec9">
-<b><h1 class="center"> PROFILE </h1></b>
-<!--div class="edit"><button type="button" class="btn btn-default btn-sm">
-    <span class="glyphicon glyphicon-edit"></span> Edit
-</button></div-->
+
+<div style="background-color: #414141">
+  <br>
+  <br>
 <img src="https://www.thehindu.com/sci-tech/technology/internet/article17759222.ece/alternates/FREE_660/02th-egg-person" alt="Avatar" class="avatar"/>
 <div class="norm"><h2 class="center">Jane Doe</h2>
-<h4 class="center">janedoe@ucsd.edu</h4></div></div>
-<h4 class="center">Member since 2018.</h4>
-<!--h5 class="center">Dietary Restrictions: Peanuts</h5>
-<h5 class="center">Current Diet: Zone Diet</h5-->
-<table  <table style="width:80%" align=Center>
-  <tr>
-    <td bgcolor="#cac6bf">Dietary Restrictions</td>
-    <td bgcolor="#dcd7cf">Current Diet</td>
-  </tr>
-  <tr>
-    <td bgcolor="#cac6bf">Peanuts</td>
-    <td bgcolor="#dcd7cf">Pescatarian</td>
-  </tr>
-</table>
+<h4 class="center" id="myName">janedoe@ucsd.edu</h4>
+
+<button id="changeName" ><i class="fa fa-pencil-square" aria-hidden="true"></i></button>
+<button id="changePass"> <a href="usernamepass.html"style="color:#E9E9E9;">CHANGE PASSWORD</a></button>
+
+   <button id="push">
+    <div class="popup" onclick="myFunction2()"> PUSH NOTIFICATIONS
+      <span class="popuptext" id="myPopup2"> Notify me if my food expires within: <br>
+        <input type="checkbox" checked> Never <br>
+        <input type="checkbox"> 1 hour <br>
+        <input type="checkbox"> 1 day <br>
+        <input type="checkbox"> 3 days <br>
+        <input type="checkbox"> 1 week <br> </span>
+    </div> </button>
+</div>
+</div>
+
+<button id="help"> <a href="help.html"style="color:#E9E9E9;">HELP</a></button>
+
+<button id="logout"> <a href="logoutmessage.html"style="color:#E9E9E9;">LOGOUT</a></button>
+
+<script>
+
+  function myFunction() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+  }
+
+  function myFunction2() {
+    var popup2 = document.getElementById("myPopup2");
+    popup2.classList.toggle("show");
+  }
+
+</script>
 
 
 </body>
