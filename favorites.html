@@ -23,6 +23,11 @@ body {
   font-family:'Roboto', sans-serif;
 }
 
+p {
+  margin:0;
+  padding:0;
+}
+
 .header {
   position: relative;
   left: 0;
@@ -84,6 +89,13 @@ body {
     overflow: scroll;
 }
 
+button {
+  background: none;
+  border: none;
+  font-size:20px;
+  padding: 10px;
+  color: #5484AE;
+}
 
 
 }
@@ -97,82 +109,120 @@ body {
   </div>
 
 
-
-
   <div class="scroll">
+    <button type="button" onclick="myFunction()">Show All</button>
+    <p id="myP" style="display:none;">  <a href="pasta.html">
+        <img src="images/pasta.PNG" alt="pasta" style="border:0;">
+      </a></p>
 
-  <div id="accordion">
-    </div>
-    <div class="card">
-      <div class="card-header" id="headingTwo">
-        <h5 class="mb-0">
-          <button style="color:#5484AE;text-decoration:none;font-size:25px;"class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          All
-          </button>
-        </h5>
-      </div>
-      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-        <div class="card-body">
-          <a href="pasta.html">
-            <img src="images/pasta.PNG" alt="pasta" style="border:0;">
-          </a>
-        </div>
-      </div>
-    </div>
-    <hr>
-    <div class="card">
-      <div class="card-header" id="headingThree">
-        <h5 class="mb-0">
-          <button style="color:#5484AE;text-decoration:none;font-size:25px;"class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-            Breakfast
-          </button>
-        </h5>
-      </div>
-      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-        <div class="card-body">
-          <a href="pasta.html">
-            <img src="images/pasta.PNG" alt="pasta" style="border:0;">
-          </a>
-        </div>
-      </div>
-    </div>
-    <hr>
-    <div class="card">
-      <div class="card-header" id="headingFour">
-        <h5 class="mb-0">
-          <button style="color:#5484AE;text-decoration:none;font-size:25px;"class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-            Lunch
-          </button>
-        </h5>
-      </div>
-      <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-        <div class="card-body">
-          <a href="pasta.html">
-            <img src="images/pasta.PNG" alt="pasta" style="border:0;">
-          </a>
-        </div>
-      </div>
-    </div>
-    <hr>
-    <div class="card">
-      <div class="card-header" id="headingFive">
-        <h5 class="mb-0">
-          <button style="color:#5484AE;text-decoration:none;font-size:25px;"class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-            Dinner
-          </button>
-        </h5>
-      </div>
-      <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
-        <div class="card-body">
-          <a href="pasta.html">
-            <img src="images/pasta.PNG" alt="pasta" style="border:0;">
-          </a>
-        </div>
-      </div>
-    </div>
-    <hr>
+    <p id="myP2" style="display:none;">    <a href="potato.html">
+        <img src="images/potato.PNG" alt="potato" style="border:0;">
+    </a></p>
 
-  </div>
+    <p id="myP3" style="display:none;">   <a href="shrimp.html">
+      <img src="images/shrimp.PNG" alt="shrimp" style="border:0;">
+    </a></p>
+
+    <p id="myP4" style="display:none;">    <a href="bbq.html">
+      <img src="images/bbq.PNG" alt="bbq" style="border:0;">
+    </a></p>
+
+    <p id="myP5" style="display:none;">    <a href="chicken.html">
+      <img src="images/chicken.PNG" alt="chicken" style="border:0;">
+    </a></p>
+
+    <p id="myP6" style="display:none;">      <a href="udon.html">
+      <img src="images/udon.PNG" alt="udon" style="border:0;">
+    </a></p>
+
+    <p id="myP7" style="display:none;">      <a href="poke.html">
+        <img src="images/poke.PNG" alt="poke" style="border:0;">
+    </a></p>
+
+    <p id="myP8" style="display:none;">    <a href="soup.html">
+      <img src="images/soup.PNG" alt="soup" style="border:0;">
+    </a></p>
+
+    <p id="myP9" style="display:none;">      <a href="salad.html">
+        <img src="images/salad.PNG" alt="salad" style="border:0;">
+    </a></p>
+
+
+
+<!--
+    <a href="pasta.html">
+      <img src="images/pasta.PNG" alt="pasta" style="border:0;">
+    </a>
+
+    <a href="potato.html">
+      <img src="images/potato.PNG" alt="potato" style="border:0;">
+    </a>
+
+    <a href="shrimp.html">
+      <img src="images/shrimp.PNG" alt="shrimp" style="border:0;">
+    </a>
+
+    <a href="bbq.html">
+      <img src="images/bbq.PNG" alt="bbq" style="border:0;">
+    </a>
+
+    <a href="chicken.html">
+      <img src="images/chicken.PNG" alt="chicken" style="border:0;">
+    </a>
+
+    <a href="udon.html">
+      <img src="images/udon.PNG" alt="udon" style="border:0;">
+    </a>
+
+    <a href="poke.html">
+      <img src="images/poke.PNG" alt="poke" style="border:0;">
+    </a>
+
+    <a href="soup.html">
+      <img src="images/soup.PNG" alt="soup" style="border:0;">
+    </a>
+
+    <a href="salad.html">
+      <img src="images/salad.PNG" alt="salad" style="border:0;">
+    </a>
+-->
+<br>
+<br>
+<br>
+
+
+<script>
+
+function myFunction() {
+  if (localStorage.getItem("customName1") == "true") {
+    document.getElementById("myP").style.display = "inline";}
+
+  if (localStorage.getItem("customName2") == "true") {
+    document.getElementById("myP2").style.display = "inline";}
+
+    if (localStorage.getItem("customName3") == "true") {
+      document.getElementById("myP3").style.display = "inline";}
+
+      if (localStorage.getItem("customName4") == "true") {
+        document.getElementById("myP4").style.display = "inline";}
+
+        if (localStorage.getItem("customName5") == "true") {
+          document.getElementById("myP5").style.display = "inline";}
+
+          if (localStorage.getItem("customName6") == "true") {
+            document.getElementById("myP6").style.display = "inline";}
+
+            if (localStorage.getItem("customName7") == "true") {
+              document.getElementById("myP7").style.display = "inline";}
+
+              if (localStorage.getItem("customName8") == "true") {
+                document.getElementById("myP8").style.display = "inline";}
+
+                if (localStorage.getItem("customName9") == "true") {
+                  document.getElementById("myP9").style.display = "inline";}
+  }
+
+</script>
 
 </div>
 
