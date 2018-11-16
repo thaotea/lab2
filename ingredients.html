@@ -2,7 +2,8 @@
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <script src="/Users/rubaiattazim/Desktop/COGS120/searchIngred.css" charset="UTF-8" type="text/javascript" defer/></script>
+<link rel=”stylesheet” type=”text/css” href=”css/styleSearch.css” />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre" rel="stylesheet">
@@ -13,14 +14,9 @@
 <link href="search-filter.css" rel="stylesheet">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><head>
 <style>
-body {
-  border: 0;
-  padding: 0;
-  margin: 0;
-  font-family:'Roboto', sans-serif;
-}
+
 .header {
   position: relative;
   left: 0;
@@ -63,188 +59,148 @@ body {
     max-width: 100%;
   }
 }
-img {
-  max-width: 100%;
-  max-height: 100%;
-}
-div.scroll {
-  background-color: white;
-  max-width: 100%;
-  height: 602px;
-  overflow: scroll;
-}
-
-/* Popup container */
-.popup {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-
-}
-
-/* The actual popup (appears on top) */
-.popup .popuptext {
-  visibility: hidden;
-    width: 160px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 8px 0;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -80px;
-    /* margin:0px auto; width: width-of-popup; */
-}
-
-/* Popup arrow */
-.popup .popuptext::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
-}
-
-/* Toggle this class when clicking on the popup container (hide and show the popup) */
-.popup .show {
-    visibility: visible;
-    -webkit-animation: fadeIn 1s;
-    animation: fadeIn 1s
-}
-
-/* Add animation (fade in the popup) */
-@-webkit-keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity:1 ;}
-}
-table {
+button {
   border: 1px solid black;
-  border-collapse: collapse;
-  background-color: white;
+}
+body {
+  background: #eee;
+  color: #444;
+  font-family: 'Helvetica', arial, sans-serif;
 }
 
-td {
-
-    text-overflow: ellipsis;
-    word-wrap: break-word;
-    border:1px solid;
+.container {
+  background: #fff;
+  max-width: 600px;
+  width: 100%;
+  display: table;
+  margin: 0 auto;
+  margin-top: 40px;
+  border: 1px solid #cfcbcc;
+  padding: 10px;
 }
 
-div.centered{
-  width: 100px;
-  height: 50px;
-  position:fixed;
-  top: calc(50% - 25px); // half of width
-  left: calc(50% - 50px); // half of height
+input {
+  border: none;
+  display: block;
+  width: 98.4%;
+  line-height: 1.5;
+  padding: 8px 0 8px 10px;
+  border-bottom: 1px solid #cfcbcc;
+  outline:0;
+
 }
 
+h1,h2 {
+  margin-top: -5px;
+  margin-left: 10px;
+  line-height: 1;
+}
+h2 {
+  color: gray;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 8px;
+  li {
+    color: #899098;
+    font-weight: 400;
+    border-bottom: 1px solid #cfcbcc;
+    line-height: 3;
+    padding: 8px 8px;
+    &:before {
+      content: "\25A1";
+      padding: 20px 20px;
+      font-size: 35px;
+    }
+    &:hover {
+      text-decoration: line-through;
+      cursor: pointer;
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.checked {
+  color:green;
+    &:before {
+      content: "\2713";
+      padding: 10px 10px;
+      font-size: 20px;
+    }
+    &:hover {
+      text-decoration: none;
+      &:after {
+        content: "(remove)";
+        color: tomato;
+        text-align: right;
+      }
+    }
+}
 </style>
-</head>
 
 <body>
   <div class="header">
     <a href="index.html">munch</a>
   </div>
-
-  <table class=buttons>
-    <tr>
-      <td align="center"><a href="searchIngreds.html"><img src="images/add.jpeg" width="40" height="40"/></a></td>
-      <td> <button type="button"> <img src="images/stringbeans.jpg" width="85">
-        <div class="popup" onclick="myFunction()"> <img src="images/expiration.jpg" width="25" height="25">
-            <span class="popuptext" id="myPopup">11/10/2018 </span>
-        </div> </button> </td>
-      <td> <button type="button"> <img src="images/cabbage.png" width="85">
-        <div class="popup" onclick="myFunction2()"> <img src="images/expiration.jpg" width="25" height="25">
-            <span class="popuptext" id="myPopup2">11/08/2018 </span>
-        </div> </button> </td>
-    </tr>
-    <tr>
-      <td> <button type="button"> <img src="images/eggs.png" width="85">
-        <div class="popup" onclick="myFunction3()"> <img src="images/expiration.jpg" width="25" height="25">
-            <span class="popuptext" id="myPopup3">11/17/2018 </span>
-        </div> </button> </td>
-      <td> <button type="button"> <img src="images/garlic.jpg" width="85">
-        <div class="popup" onclick="myFunction4()"> <img src="images/expiration.jpg" width="25" height="25">
-            <span class="popuptext" id="myPopup4">11/25/2018 </span>
-        </div> </button> </td>
-      <td> <button type="button"> <img src="images/lemon.jpeg" width="85">
-        <div class="popup" onclick="myFunction5()"> <img src="images/expiration.jpg" width="25" height="25">
-            <span class="popuptext" id="myPopup5">11/13/2018 </span>
-        </div> </button> </td>
-    </tr>
-    <tr>
-      <td> <button type="button"> <img src="images/pastapasta.png" width="85">
-        <div class="popup" onclick="myFunction6()"> <img src="images/expiration.jpg" width="25" height="25">
-            <span class="popuptext" id="myPopup6">03/21/2019 </span>
-        </div> </button> </td>
-      <td> <button type="button"> <img src="images/steak.png" width="85">
-        <div class="popup" onclick="myFunction7()"> <img src="images/expiration.jpg" width="25" height="25">
-            <span class="popuptext" id="myPopup7">11/07/2018 </span>
-        </div> </button> </td>
-      <td> <button type="button"> <img src="images/tomatoes.jpg" width="85">
-        <div class="popup" onclick="myFunction8()"> <img src="images/expiration.jpg" width="25" height="25">
-            <span class="popuptext" id="myPopup8">11/10/2018 </span>
-        </div> </button> </td>
-    </tr>
-  </table>
-
-    <script>
-    // When the user clicks on <div>, open the popup
-    function myFunctionA() {
-    var popupA = document.getElementById("myPopupA");
-    popupA.classList.toggle("show");
-   }
-    function myFunction() {
-    var popup = document.getElementById("myPopup");
-    popup.classList.toggle("show");
-   }
-   function myFunction2() {
-     var popup2 = document.getElementById("myPopup2");
-     popup2.classList.toggle("show");
-   }
-   function myFunction3() {
-     var popup3 = document.getElementById("myPopup3");
-     popup3.classList.toggle("show");
-   }
-   function myFunction4() {
-     var popup4 = document.getElementById("myPopup4");
-     popup4.classList.toggle("show");
-   }
-   function myFunction5() {
-     var popup5 = document.getElementById("myPopup5");
-     popup5.classList.toggle("show");
-   }
-   function myFunction6() {
-     var popup6 = document.getElementById("myPopup6");
-     popup6.classList.toggle("show");
-   }
-   function myFunction7() {
-     var popup7 = document.getElementById("myPopup7");
-     popup7.classList.toggle("show");
-   }
-   function myFunction8() {
-     var popup8 = document.getElementById("myPopup8");
-     popup8.classList.toggle("show");
-   }
-
-</script>
-<div class="footer">
-  <p><a href="index.html" class="w3-btn w3-xlarge">&nbsp;&nbsp;&nbsp;<i class="fa fa-home">&nbsp;&nbsp;&nbsp;</i></a>
-  <a href="ingredients.html" class="w3-btn w3-xlarge">&nbsp;&nbsp;&nbsp;<i class="fa fa-plus">&nbsp;&nbsp;&nbsp;</i></a>
-  <a href="favorites.html" class="w3-btn w3-xlarge">&nbsp;&nbsp;&nbsp;<i class="fa fa-heart">&nbsp;&nbsp;&nbsp;</i></a>
-  <a href="profile.html" class="w3-btn w3-xlarge">&nbsp;&nbsp;&nbsp;<i class="fa fa-user-circle-o">&nbsp;&nbsp;&nbsp;</i></a></p>
+  <h1 style="font-family: 'Frank Ruhl Libre', serif;color: #505050;"> My Ingredients </h1>
+  <div class="container">
+  <form  action="#">
+    <input type="text" name="item" id="item" placeholder="Add New" />
+</form>
+<ul id="list"></ul>
 </div>
+
+<script>
+// get favorites from local storage or empty array
+(function(){
+
+  var list = document.querySelector('#list'),
+      form = document.querySelector('form'),
+      item = document.querySelector('#item');
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    list.innerHTML += '<li>' + item.value + '</li>';
+    store();
+    item.value = "";
+  },false)
+
+  list.addEventListener('click',function(e){
+    var t = e.target;
+    if(t.classList.contains('checked')){
+      t.parentNode.removeChild(t);
+    } else {
+      t.classList.add('checked');
+    }
+    store();
+  },false)
+
+  function store() {
+    window.localStorage.myitems = list.innerHTML;
+  }
+
+  function getValues() {
+    var storedValues = window.localStorage.myitems;
+    if(!storedValues) {
+      list.innerHTML = '<li>Citrus Shrimp</li>'+
+                       '<li>Linguine Pasta</li>'+
+                       '<li>Apples</li>'+
+                       '<li>Lemons</li>';
+    }
+    else {
+      list.innerHTML = storedValues;
+    }
+  }
+  getValues();
+})();
+
+// local storage stores strings so we use JSON to stringify for storage and parse to get out of storage
+</script>
+
 
 </body>
 </html>
