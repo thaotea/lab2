@@ -92,13 +92,13 @@ body {
       <div class="card-header" id="headingTwo">
         <h5 class="mb-0">
           <button style="color:#5484AE;text-decoration:none;font-size:25px;"class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          All
+          All Recipes
           </button>
         </h5>
       </div>
       <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
         <div class="card-body">
-          <a href="pasta.html">
+          <a href="pasta.html" id="pastaFav">
             <img src="images/pasta.PNG" alt="pasta" style="border:0;">
           </a>
         </div>
@@ -162,33 +162,90 @@ body {
             Favorites
             </button>
           </h5>
-        </div>
+            <div class="card-body">
+              <a href="pasta.html">
+                <img src="images/pasta.PNG" alt="pasta" style="border:0;">
+              </a>
+            </div>
+            <div class="card-body">
+              <a href="shrimp.html">
+                <img src="images/shrimp.PNG" alt="shrimp" style="border:0;">
+              </a>
+            </div>
     </div>
-    <hr>
-    <div class="card">
-      <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-        <div class="card-body">
-          <a href="pasta.html">
-            <img src="images/pasta.PNG" alt="pasta" style="border:0;">
-          </a>
-        </div>
-      </div>
-    </div>
-    <hr>
-    <div class="card">
-      <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
-        <div class="card-body">
-          <a href="pasta.html">
-            <img src="images/pasta.PNG" alt="pasta" style="border:0;">
-          </a>
-        </div>
-      </div>
-    </div>
-    <hr>
+  </div>
 
   </div>
 
 </div>
+<div class="container">
+  <form  action="#">
+    <a href="pasta.html" id="pastaFav">
+      <img src="images/pasta.PNG" alt="pasta" style="border:0;">
+    </a>
+</form>
+<ul id="list"></ul>
+</div>
+<script>
+/*
+  $("#pastaFav").click(function(){
+    var pastaFaved;
+    localStorage.setItem("fave",pastaFaved);
+  }
+);
+
+var pastas = localStorage.getItem("fave");
+if (pastas) {
+  $("pastaFav").html(pastas);
+}
+*/
+(function(){
+
+  var list = document.querySelector('#list'),
+      form = document.querySelector('form'),
+      item = document.querySelector('#item');
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    list.innerHTML += '<li>' + item.value + '</li>';
+    store();
+    item.value = "";
+  },false)
+
+  list.addEventListener('click',function(e){
+    var t = e.target;
+    if(t.classList.contains('checked')){
+      t.parentNode.removeChild(t);
+    } else {
+      t.classList.add('checked');
+    }
+    store();
+  },false)
+
+  function store() {
+    window.localStorage.myitems = list.innerHTML;
+  }
+
+  function getValues() {
+    var storedValues = window.localStorage.myitems;
+    if(!storedValues) {
+      list.innerHTML = '';
+    }
+    else {
+      list.innerHTML = storedValues;
+    }
+  }
+  getValues();
+})();
+
+
+</script>
+
+
+
+
+
+
 
 <div class="footer">
   <p></p>
