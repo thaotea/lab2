@@ -15,7 +15,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
-
+body {
+  border: 0;
+  margin: 0;
+  font-family:'Roboto', sans-serif;
+}
+.padding {
+  padding:20px;
+}
 .header {
   position: relative;
   left: 0;
@@ -59,7 +66,7 @@
   }
 }
 button {
-  border: 1px solid black;
+  border: 1px solid lightgray;
 }
 </style>
 </head>
@@ -67,6 +74,7 @@ button {
   <div class="header">
     <a href="index.html">munch</a>
   </div>
+  <div class="padding">
     <h1 style="font-family: 'Frank Ruhl Libre', serif;color: #505050;"> Reset Password </h1>
     <form action="/action_page.php">
     E-mail:<br>
@@ -74,6 +82,6 @@ button {
     <button type="button"> <a href="email.html">Enter</a></button> <br><br>
   </form>
   <button type="button"> <a href="login.html">Return to Login</a></button>
-
+</div>
 </body>
 </html>
