@@ -205,29 +205,20 @@ div.scroll {
 
   <script>
 
-  /*var favs = {recipe: 'Rice'}
+if (window.localStorage) {
+  localStorage.setItem("favorites","pastaFav");
+  localStorage.setItem("favorites","potatoFav");
+  localStorage.setItem("favorites","shrimpFav");
+}
 
-  localStorage.setItem('food', favs)
+var favorites = "not set";
+function setFavorites() {
+  if (window.localStorage && localStorage.favorites) {
+    favorites = localStorage.getItem("favorites");
+    document.getElementbyId("output").textContent = "These are your favorites:" + favorites;
+  }
 
-  localStorage.getItem('food')
-
-  localStorage.setItem('food', JSON.stringify(favs))
-
-  localStorage.getItem('food')
-
-  JSON.parse(localStorage.getItem('food'))*/
-
-  $("fave1").click(function(){
-    var addFave;
-    if (addFave) {
-      $("#fave1").html(addFave);
-      localStorage.setItem('makeFave',addFave);
-      localStorage.getItem('makeFave');
-      localStorage.setItem('makeFave',JSON.stringify(addFave))
-    }
-  });
-
-
+}
 
 </script>
 
