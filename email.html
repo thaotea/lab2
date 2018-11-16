@@ -16,6 +16,12 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
 
+body {
+
+  border: 0;
+  margin: 0;
+  font-family:'Roboto', sans-serif;
+}
 .header {
   position: relative;
   left: 0;
@@ -46,6 +52,10 @@
   background-color: #ddd;
   color: black;
 }
+.padding {
+
+  padding:20px;
+}
 @media screen and (max-width: 500px) {
   .header a {
   float: none;
@@ -57,9 +67,10 @@
     right: 0;
     max-width: 100%;
   }
+
 }
 button {
-  border: 1px solid black;
+  border: 1px solid lightgray;
 }
 </style>
 </head>
@@ -67,8 +78,9 @@ button {
   <div class="header">
     <a href="index.html">munch</a>
   </div>
+  <div class="padding">
   <p1> <br> <br> A new password has been sent to your email. </p1><br><br>
   <button type="button"> <a href="login.html">Return to Login</a></button>
-
+</div>
 </body>
 </html>
