@@ -152,6 +152,20 @@ div.scroll {
 
 .show {display: block;}
 
+
+.heart {
+  font-size: 25px;
+	color:red;
+}
+
+.inside button {
+  background:none;
+  border:none;
+  position: absolute;
+  right: 3px;
+
+}
+
 </style>
 </head>
 <body>
@@ -182,25 +196,18 @@ div.scroll {
         </div>
       </div>
     </div>
-
+<div class = "inside">
   <div class="filterDiv vegeterian">
-  <label for="heart1" class="custom-checkbox">
-    <input type="checkbox" id="heart1"/>
-    <i class="glyphicon glyphicon-heart-empty"></i>
-    <i class="glyphicon glyphicon-heart"></i>
-  </label>
+    <button id=Favorite1> <br><br><br><br><br><br><br><i class="heart fa fa-heart-o"></i></button>
 
   <a href="pasta.html">
     <img src="images/pasta.PNG" alt="pasta" style="border:0;">
   </a>
+
   </div>
 
   <div class="filterDiv vegeterian">
-  <label for="heart2" class="custom-checkbox">
-    <input type="checkbox" id="heart2"/>
-    <i class="glyphicon glyphicon-heart-empty"></i>
-    <i class="glyphicon glyphicon-heart"></i>
-  </label>
+    <button id=Favorite2> <br><br><br><br><br><br><br><i class="heart fa fa-heart-o"></i></button>
 
   <a href="potato.html">
     <img src="images/potato.PNG" alt="potato" style="border:0;">
@@ -208,11 +215,7 @@ div.scroll {
   </div>
 
   <div class="filterDiv healthy lowcalorie lowcarb">
-  <label for="heart3" class="custom-checkbox">
-    <input type="checkbox" id="heart3"/>
-    <i class="glyphicon glyphicon-heart-empty"></i>
-    <i class="glyphicon glyphicon-heart"></i>
-  </label>
+    <button id=Favorite3> <br><br><br><br><br><br><br><i class="heart fa fa-heart-o"></i></button>
 
   <a href="shrimp.html">
     <img src="images/shrimp.PNG" alt="shrimp" style="border:0;">
@@ -220,11 +223,8 @@ div.scroll {
   </div>
 
   <div class="filterDiv lowcarb">
-  <label for="heart4" class="custom-checkbox">
-    <input type="checkbox" id="heart4"/>
-    <i class="glyphicon glyphicon-heart-empty"></i>
-    <i class="glyphicon glyphicon-heart"></i>
-  </label>
+    <button id=Favorite4> <br><br><br><br><br><br><br><i class="heart fa fa-heart-o"></i></button>
+
 
   <a href="bbq.html">
     <img src="images/bbq.PNG" alt="bbq" style="border:0;">
@@ -233,11 +233,7 @@ div.scroll {
 
 
   <div class="filterDiv healthy gluten lowcalorie">
-  <label for="heart5" class="custom-checkbox">
-    <input type="checkbox" id="heart5"/>
-    <i class="glyphicon glyphicon-heart-empty"></i>
-    <i class="glyphicon glyphicon-heart"></i>
-  </label>
+    <button id=Favorite5> <br><br><br><br><br><br><br><i class="heart fa fa-heart-o"></i></button>
 
   <a href="chicken.html">
     <img src="images/chicken.PNG" alt="chicken" style="border:0;">
@@ -246,11 +242,8 @@ div.scroll {
 
 
   <div class="filterDiv vegeterian vegan healthy lowcalorie">
-  <label for="heart6" class="custom-checkbox">
-    <input type="checkbox" id="heart6"/>
-    <i class="glyphicon glyphicon-heart-empty"></i>
-    <i class="glyphicon glyphicon-heart"></i>
-  </label>
+    <button id=Favorite6> <br><br><br><br><br><br><br><i class="heart fa fa-heart-o"></i></button>
+
 
   <a href="udon.html">
     <img src="images/udon.PNG" alt="udon" style="border:0;">
@@ -258,11 +251,7 @@ div.scroll {
   </div>
 
   <div class="filterDiv healthy lowcarb lowcalorie gluten">
-  <label for="heart7" class="custom-checkbox">
-    <input type="checkbox" id="heart7"/>
-    <i class="glyphicon glyphicon-heart-empty"></i>
-    <i class="glyphicon glyphicon-heart"></i>
-  </label>
+    <button id=Favorite7> <br><br><br><br><br><br><br><i class="heart fa fa-heart-o"></i></button>
 
   <a href="poke.html">
     <img src="images/poke.PNG" alt="poke" style="border:0;">
@@ -270,11 +259,8 @@ div.scroll {
   </div>
 
   <div class="filterDiv vegan vegeterian healthy lowcarb gluten">
-  <label for="heart8" class="custom-checkbox">
-    <input type="checkbox" id="heart8"/>
-    <i class="glyphicon glyphicon-heart-empty"></i>
-    <i class="glyphicon glyphicon-heart"></i>
-  </label>
+    <button id=Favorite8> <br><br><br><br><br><br><br><i class="heart fa fa-heart-o"></i></button>
+
 
   <a href="soup.html">
     <img src="images/soup.PNG" alt="soup" style="border:0;">
@@ -282,11 +268,8 @@ div.scroll {
   </div>
 
   <div class="filterDiv vegan vegeterian healthy lowcarb lowcalorie">
-  <label for="heart9" class="custom-checkbox">
-    <input type="checkbox" id="heart9"/>
-    <i class="glyphicon glyphicon-heart-empty"></i>
-    <i class="glyphicon glyphicon-heart"></i>
-  </label>
+    <button id=Favorite9> <br><br><br><br><br><br><br><i class="heart fa fa-heart-o"></i></button>
+
 
   <a href="salad.html">
     <img src="images/salad.PNG" alt="salad" style="border:0;">
@@ -294,7 +277,7 @@ div.scroll {
   </div>
 <br>
 <br>
-<br>
+<br></div>
 </div>
 
 
@@ -307,6 +290,25 @@ div.scroll {
 </div>
 
 
+<script id="entry-template" type="text/x-handlebars-template">
+		<div class="project" id="project{{index}}">
+			<a href="#" class="thumbnail">
+				<img src="{{profilePic}}" alt="Lorem Pixel image" class="img">
+				<p>{{title}}</p>
+			</a>
+		</div>
+</script>
+
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/handlebars-v4.0.11.js"></script>
+<script src="js/favorite.js"></script>
+
+<script>
+$(".heart.fa").click(function() {
+  $(this).toggleClass("fa-heart fa-heart-o");
+});
+  </script>
 
   <script>
   function myFunction() {
