@@ -180,7 +180,7 @@ div.scroll {
   </label>
 
   <a href="pasta.html">
-    <img src="images/pasta.PNG" alt="pasta" style="border:0;">
+    <img src="https://img1.cookinglight.timeinc.net/sites/default/files/1523901147/1804w-Eggs.jpg" alt="pasta" style="border:0;">
   </a>
 
   <label for="heart2" class="custom-checkbox">
@@ -222,8 +222,11 @@ div.scroll {
     if (addFave) {
       $("#fave1").html(addFave);
       localStorage.setItem('makeFave',addFave);
+      localStorage.getItem('makeFave');
+      localStorage.setItem('makeFave',JSON.stringify(addFave))
     }
   });
+
 
 
 </script>
