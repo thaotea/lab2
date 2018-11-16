@@ -16,9 +16,11 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
 body {
-  background-color: white;
-	margin: 0;
-	font-family: Arial, Helvetica, sans-serif;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font-family:'Roboto', sans-serif;
+
 }
 .header {
   position: relative;
@@ -56,7 +58,13 @@ body {
   display: block;
   }
 }
-
+div.scroll {
+  background-color: white;
+  max-width: 100%;
+  height: 100%;
+  overflow: scroll;
+  padding:20px;
+}
 button {
   border: 1px solid black;
 }
@@ -67,11 +75,11 @@ button {
     <a href="index.html">munch</a>
   </div>
   <br>
-  <button type="button" style="padding:2px"> <a href="profile.html">Back to Profile</a></button>
 
-
-	<h1> Help </h1>
-  <p0><b> What does "munch" do? </b><br>
+    <a href="profile.html" class="w3-btn w3-xlarge" id="back"><i class="fa fa-arrow-left"></i></a>
+  <div class="scroll">
+	<h3> Help </h3>
+  <p0><b> What does "Munch" do? </b><br>
     Our app helps you keep track of the food in your kitchen and reduce waste
     by notifying you before your food expires-so you don't have to worry! We
     also provide you with personalized meal plans according to any dietary
@@ -82,12 +90,13 @@ button {
   <p1><b> How do I change my password? </b><br>
     Click <a href="usernamepass.html">here </a> to change your password. </p1><br><br>
   <p2><b> How do I change my username? </b><br>
-    Click <a href="usernamepass.html">here </a> to change your username. </p2><br><br>
-  <p3><b> How do I change my meal plan? </b><br>
-    Click <a href="settings.html">here </a> to change your meal plan. </p3><br><br>
+    Click <a href="profile.html">here </a> to change your username. </p2><br><br>
   <p4><b> How do I turn off notifications? </b><br>
-      Click <a href="settings.html">here </a> to change your notifications. </p4><br><br>
-
+      Click <a href="profile.html">here </a> to change your notifications. </p4><br><br>
+      <br>
+      <br>
+      <br>
+</div>
       <div class="footer">
         <p><a href="index.html" class="w3-btn w3-xlarge">&nbsp;&nbsp;&nbsp;<i class="fa fa-home">&nbsp;&nbsp;&nbsp;</i></a>
         <a href="ingredients.html" class="w3-btn w3-xlarge">&nbsp;&nbsp;&nbsp;<i class="fa fa-plus">&nbsp;&nbsp;&nbsp;</i></a>
