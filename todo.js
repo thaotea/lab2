@@ -125,6 +125,7 @@ data = data || {};
             "text": params.description
         }).appendTo(wrapper);
 
+
 	    wrapper.draggable({
             start: function() {
                 $("#" + defaults.deleteDiv).show();
@@ -145,7 +146,7 @@ data = data || {};
 
     todo.add = function() {
         var inputs = $("#" + defaults.formId + " :input"),
-            errorMessage = "Title can not be empty",
+            errorMessage = "Please enter in an ingredient",
             id, title, description, date, tempData;
 
         if (inputs.length !== 4) {
@@ -186,7 +187,7 @@ data = data || {};
 
     var generateDialog = function (message) {
         var responseId = "response-dialog",
-            title = "Messaage",
+            title = "Message",
             responseDialog = $("#" + responseId),
             buttonOptions;
 
@@ -221,3 +222,4 @@ data = data || {};
     };
 
 })(todo, data, jQuery);
+
